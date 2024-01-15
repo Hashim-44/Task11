@@ -4,7 +4,7 @@ var city = document.getElementById("search");
 
 
 async function getCw(cap) {
-    var myApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=93824416015f4b75901210944241301&q=${cap}&days=3`)
+    var myApi = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=93824416015f4b75901210944241301&q=${cap}&days=3`)
 let fmyApi = await myApi.json()
 data = fmyApi.forecast.forecastday 
 data2 = fmyApi.location
