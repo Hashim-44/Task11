@@ -120,3 +120,6 @@ let myc=  city.value;
 getCw(myc)
 }
 
+city.addEventListener('input' , function(){
+  searchc()
+})
