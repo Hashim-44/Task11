@@ -22,6 +22,7 @@ display()
 
 getCw('ghaza')
 
+
 let data2=[]
 
 let data = []
@@ -33,14 +34,27 @@ let data5 =[]
 let data6 =[]
 let data7 =[]
 let data8 =[]
+
+
+
+
 function display() {
    
  
+  function getCDay( date = new Date(), locale = "en-US" ){
+    return date.toLocaleDateString(locale, { weekday: "long"});
+    }
+    
+    currentDay1 = getCDay(new Date (data[0].date));
+    currentDay2 = getCDay(new Date (data[1].date));
+    currentDay3 = getCDay(new Date (data[2].date));
+    console.log(`${currentDay2}` );
 
        let cols = `
         <div class="item-1 col-md-4">
         <div class="d-flex i-head justify-content-between">
          
+          <div class="day"><p>${currentDay1}</p></div>
           <div class="day"><p>${data[0].date}</p></div>
         </div>
         <div class="mt-4">
@@ -71,7 +85,7 @@ function display() {
 
       <div class="item-2 col-md-4 text-center">
         <div>
-          <p>${data[1].date}</p>
+          <p>${currentDay2}</p>
         </div>
         <div>
           <div>
@@ -91,7 +105,7 @@ function display() {
 
       <div class="item-3 col-md-4 text-center">
         <div>
-          <p>${data[2].date}</p>
+          <p>${currentDay3}</p>
         </div>
         <div>
           <div>
@@ -110,7 +124,6 @@ function display() {
 
 
 
-    
 
     document.getElementById('myData').innerHTML= cols
 }
@@ -123,3 +136,5 @@ getCw(myc)
 city.addEventListener('input' , function(){
   searchc()
 })
+
+
